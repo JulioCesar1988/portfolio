@@ -1,5 +1,60 @@
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    authDomain: "tu-proyecto.firebaseapp.com",
+    databaseURL: "https://tu-proyecto-default-rtdb.firebaseio.com",
+    projectId: "tu-proyecto",
+    storageBucket: "tu-proyecto.appspot.com",
+    messagingSenderId: "XXXXXXXXXXXX",
+    appId: "1:XXXXXXXXXXXX:web:XXXXXXXXXXXXXXXX"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Visit counter functionality
+function updateVisitCount() {
+    const visitCountRef = database.ref('visits');
+    visitCountRef.transaction((currentCount) => {
+        return (currentCount || 0) + 1;
+    });
+    
+    visitCountRef.on('value', (snapshot) => {
+        const count = snapshot.val() || 0;
+        document.getElementById('visitCount').textContent = count.toLocaleString();
+    });
+}
+
+// Counter animation
+function animateCounter(target) {
+    const counter = document.getElementById('visitCount');
+    const duration = 2000; // 2 seconds
+    const steps = 60; // 60fps
+    const stepValue = target / steps;
+    let current = 0;
+    
+    const updateCounter = () => {
+        current += stepValue;
+        if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target;
+        }
+    };
+    
+    updateCounter();
+}
+
 // Navbar scroll behavior
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize visit counter
+    updateVisitCount();
+
+    // Initialize counter animation
+    animateCounter(100);
+
     const navbar = document.getElementById('mainNav');
     const scrollToTop = document.querySelector('.scroll-to-top');
 
@@ -41,7 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Aquí puedes agregar la lógica para enviar el formulario
+            
+            // Obtener los valores del formulario
+            const formData = {
+                name: this.querySelector('input[type="text"]').value,
+                email: this.querySelector('input[type="email"]').value,
+                subject: this.querySelectorAll('input[type="text"]')[1].value,
+                message: this.querySelector('textarea').value
+            };
+
+            // Crear el enlace mailto con los datos del formulario
+            const mailtoLink = `mailto:julio.unlp2010@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
+            )}`;
+
+            // Abrir el cliente de correo predeterminado
+            window.location.href = mailtoLink;
+
+            // Mostrar mensaje de éxito
             alert('Gracias por tu mensaje. Te responderé pronto.');
             contactForm.reset();
         });

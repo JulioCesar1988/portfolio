@@ -78,10 +78,10 @@
                             <i class="fab fa-java fa-3x mb-3"></i>
                             <h5 class="card-title">Java & Spring</h5>
                             <ul class="list-unstyled">
-                                <li>Java 8/11/17</li>
-                                <li>Spring Boot/Cloud</li>
-                                <li>Spring Security</li>
-                                <li>JPA/Hibernate</li>
+                                <li><i class="fab fa-java"></i> Java 8/11/17</li>
+                                <li><i class="fas fa-leaf"></i> Spring Boot/Cloud</li>
+                                <li><i class="fas fa-shield-alt"></i> Spring Security</li>
+                                <li><i class="fas fa-database"></i> JPA/Hibernate</li>
                             </ul>
                         </div>
                     </div>
@@ -92,10 +92,10 @@
                             <i class="fas fa-database fa-3x mb-3"></i>
                             <h5 class="card-title">Bases de Datos</h5>
                             <ul class="list-unstyled">
-                                <li>PostgreSQL/MySQL</li>
-                                <li>MongoDB</li>
-                                <li>Redis</li>
-                                <li>Diseño de Esquemas</li>
+                                <li><i class="fas fa-database"></i> PostgreSQL/MySQL</li>
+                                <li><i class="fas fa-server"></i> MongoDB</li>
+                                <li><i class="fas fa-memory"></i> Redis</li>
+                                <li><i class="fas fa-project-diagram"></i> Diseño de Esquemas</li>
                             </ul>
                         </div>
                     </div>
@@ -106,10 +106,10 @@
                             <i class="fas fa-cloud fa-3x mb-3"></i>
                             <h5 class="card-title">Cloud & DevOps</h5>
                             <ul class="list-unstyled">
-                                <li>Docker/Kubernetes</li>
-                                <li>AWS/GCP</li>
-                                <li>Jenkins/GitLab CI</li>
-                                <li>Maven/Gradle</li>
+                                <li><i class="fab fa-docker"></i> Docker/Kubernetes</li>
+                                <li><i class="fab fa-aws"></i> AWS/GCP</li>
+                                <li><i class="fas fa-cogs"></i> Jenkins/GitLab CI</li>
+                                <li><i class="fas fa-box"></i> Maven/Gradle</li>
                             </ul>
                         </div>
                     </div>
@@ -120,10 +120,10 @@
                             <i class="fas fa-exchange-alt fa-3x mb-3"></i>
                             <h5 class="card-title">Arquitectura</h5>
                             <ul class="list-unstyled">
-                                <li>Microservicios</li>
-                                <li>RESTful APIs</li>
-                                <li>Event-Driven</li>
-                                <li>DDD</li>
+                                <li><i class="fas fa-microchip"></i> Microservicios</li>
+                                <li><i class="fas fa-plug"></i> RESTful APIs</li>
+                                <li><i class="fas fa-exchange-alt"></i> Event-Driven</li>
+                                <li><i class="fas fa-sitemap"></i> DDD</li>
                             </ul>
                         </div>
                     </div>
@@ -134,10 +134,10 @@
                             <i class="fas fa-vial fa-3x mb-3"></i>
                             <h5 class="card-title">Testing</h5>
                             <ul class="list-unstyled">
-                                <li>JUnit/Mockito</li>
-                                <li>TestContainers</li>
-                                <li>Integration Testing</li>
-                                <li>TDD</li>
+                                <li><i class="fas fa-vial"></i> JUnit/Mockito</li>
+                                <li><i class="fas fa-flask"></i> TestContainers</li>
+                                <li><i class="fas fa-check-circle"></i> Integration Testing</li>
+                                <li><i class="fas fa-code-branch"></i> TDD</li>
                             </ul>
                         </div>
                     </div>
@@ -148,10 +148,10 @@
                             <i class="fas fa-tools fa-3x mb-3"></i>
                             <h5 class="card-title">Herramientas</h5>
                             <ul class="list-unstyled">
-                                <li>Git/GitHub</li>
-                                <li>IntelliJ IDEA</li>
-                                <li>Postman/Insomnia</li>
-                                <li>Jira/Confluence</li>
+                                <li><i class="fab fa-git-alt"></i> Git/GitHub</li>
+                                <li><i class="fas fa-code"></i> IntelliJ IDEA</li>
+                                <li><i class="fas fa-paper-plane"></i> Postman/Insomnia</li>
+                                <li><i class="fab fa-jira"></i> Jira/Confluence</li>
                             </ul>
                         </div>
                     </div>
@@ -207,10 +207,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
-                        <p class="lead">¿Interesado en trabajar juntos? Contáctame a través de:</p>
-                        <a href="mailto:julio.unlp2010@gmail.com" class="btn btn-primary btn-lg mb-4">
-                            <i class="fas fa-envelope me-2"></i>julio.unlp2010@gmail.com
-                        </a>
+                        <p class="lead">¿Interesado en trabajar juntos? Envíame un mensaje:</p>
                     </div>
                     <form id="contactForm">
                         <div class="row">
@@ -249,6 +246,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p class="lead mb-0">© 2024 Julio Contreras. Todos los derechos reservados.</p>
+                    <div class="visit-counter mt-3">
+                        <i class="fas fa-eye"></i> <span id="visitCount">0</span>/100 visitas
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,6 +258,11 @@
         <i class="fas fa-angle-up"></i>
     </div>
 
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>

@@ -140,6 +140,21 @@ body {
 #skills .list-unstyled li {
     margin-bottom: 0.5rem;
     color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#skills .list-unstyled li i {
+    color: #3498db;
+    font-size: 1.1rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+#skills .list-unstyled li:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
 
 /* Portfolio Section */
@@ -250,19 +265,85 @@ body {
     right: 25px;
     bottom: 25px;
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    color: #fff;
+    color: white;
     background: #3498db;
-    line-height: 46px;
+    line-height: 40px;
     border-radius: 50%;
-    z-index: 1000;
+    z-index: 99;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
+
 .scroll-to-top:hover {
     background: #2980b9;
-    color: #fff;
+    color: white;
+}
+
+/* Visit Counter */
+.visit-counter {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.visit-counter:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.visit-counter i {
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+#visitCount {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.visit-counter::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visit-counter:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top,
+    .visit-counter {
+        display: none;
+    }
 }
