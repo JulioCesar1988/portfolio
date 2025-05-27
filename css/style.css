@@ -135,7 +135,7 @@ body {
 }
 
 #skills .fa-3x {
-    color: var(--primary-color);
+    color: #3b82f6;
     margin-bottom: 1.5rem;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 #skills .list-unstyled li i {
-    color: var(--primary-color);
+    color: #3b82f6;
     font-size: 1rem;
     width: 1.5rem;
     text-align: center;
