@@ -1,14 +1,14 @@
 /* Variables de colores */
 :root {
-    --primary-color: #000000;
-    --primary-dark: #333333;
-    --secondary-color: #f5f5f5;
-    --accent-color: #666666;
-    --text-dark: #000000;
-    --text-light: #666666;
-    --bg-light: #ffffff;
-    --bg-white: #ffffff;
-    --bg-gradient: linear-gradient(135deg, #000000 0%, #333333 100%);
+    --primary-color: #ffffff; /* Blanco para elementos clave */
+    --primary-dark: #dddddd; /* Gris claro para hover o estados secundarios */
+    --secondary-color: #1a1a1a; /* Negro muy oscuro para fondos */
+    --accent-color: #888888; /* Gris medio para acentos */
+    --text-dark: #ffffff; /* Texto principal blanco */
+    --text-light: #cccccc; /* Texto secundario gris claro */
+    --bg-light: #1a1a1a; /* Fondo oscuro para secciones */
+    --bg-white: #000000; /* Fondo principal negro */
+    --bg-gradient: linear-gradient(135deg, #000000 0%, #333333 100%); /* Gradiente oscuro si se usa */
 }
 
 body {
@@ -24,7 +24,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: var(--bg-white) !important;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
 }
 
 #mainNav .navbar-brand {
@@ -81,6 +81,7 @@ body {
     padding: 6rem 0;
     position: relative;
     z-index: 1;
+    background-color: var(--bg-light);
 }
 
 .page-section .page-section-heading {
@@ -93,7 +94,7 @@ body {
 
 /* About Section */
 #about {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
 }
 
 #about .lead {
@@ -105,13 +106,13 @@ body {
 
 /* Skills Section */
 #skills {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
 }
 
 #skills .card {
-    border: 1px solid #eee;
+    border: 1px solid #333;
     transition: all 0.3s ease;
-    background-color: var(--bg-white);
+    background-color: var(--secondary-color);
     border-radius: 0;
     overflow: hidden;
     height: 100%;
@@ -119,7 +120,7 @@ body {
 
 #skills .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 #skills .card-body {
@@ -134,7 +135,7 @@ body {
 }
 
 #skills .fa-3x {
-    color: var(--text-dark);
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
@@ -148,7 +149,7 @@ body {
 }
 
 #skills .list-unstyled li i {
-    color: var(--text-dark);
+    color: var(--primary-color);
     font-size: 1rem;
     width: 1.5rem;
     text-align: center;
@@ -156,7 +157,8 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--text-dark);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 0;
@@ -165,13 +167,14 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--text-light);
+    background-color: var(--primary-dark);
+    color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 .btn-outline-primary {
-    color: var(--text-dark);
-    border: 1px solid var(--text-dark);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 0.8rem 1.5rem;
     border-radius: 0;
     font-weight: 400;
@@ -179,8 +182,8 @@ body {
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--text-dark);
-    color: var(--bg-white);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
@@ -188,8 +191,8 @@ body {
 .footer {
     background-color: var(--bg-white);
     padding: 4rem 0 2rem;
-    color: var(--text-dark);
-    border-top: 1px solid #eee;
+    color: var(--text-light);
+    border-top: 1px solid #333;
 }
 
 .footer-heading {
@@ -214,7 +217,7 @@ body {
 }
 
 .footer-contact li i {
-    color: var(--text-dark);
+    color: var(--primary-color);
     width: 20px;
 }
 
@@ -225,25 +228,25 @@ body {
 }
 
 .footer-contact a:hover {
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
 
 .location-map {
-    background: var(--bg-white);
+    background: var(--secondary-color);
     border-radius: 0;
     padding: 1rem;
 }
 
 .location-map iframe {
-    border: 1px solid #eee;
+    border: 1px solid #333;
     transition: transform 0.3s ease;
 }
 
 .visit-counter {
-    background: var(--bg-white);
+    background: var(--secondary-color);
     color: var(--text-light);
     padding: 1rem;
-    border: 1px solid #eee;
+    border: 1px solid #333;
     font-size: 0.9rem;
     display: inline-block;
     transition: all 0.3s ease;
@@ -274,6 +277,14 @@ body {
 
     #skills .card {
         margin-bottom: 1rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer-contact li {
+        justify-content: center;
     }
 }
 
