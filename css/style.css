@@ -157,9 +157,9 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
+    background-color: transparent; /* Fondo transparente por defecto */
+    color: var(--primary-color); /* Texto blanco */
+    border: 1px solid var(--primary-color); /* Borde blanco */
     padding: 0.8rem 1.5rem;
     border-radius: 0;
     font-weight: 400;
@@ -167,12 +167,15 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
-    color: var(--secondary-color);
+    background-color: var(--primary-color); /* Fondo blanco al pasar el ratón */
+    color: var(--secondary-color); /* Texto oscuro al pasar el ratón */
     transform: translateY(-2px);
+    /* Eliminada la sombra del hover si la había para un look más limpio */
+    box-shadow: none;
 }
 
 .btn-outline-primary {
+    /* Mantengo el estilo outline existente para otros botones si los hay */
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     padding: 0.8rem 1.5rem;
@@ -185,6 +188,7 @@ body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     transform: translateY(-2px);
+    box-shadow: none; /* Eliminada la sombra */
 }
 
 /* Footer */
