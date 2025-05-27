@@ -21,8 +21,6 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Sobre Mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -54,11 +52,8 @@
                 <div class="col-lg-8">
                     <p class="lead text-center">Desarrollador backend especializado en Java con experiencia en el diseño e implementación de arquitecturas empresariales robustas. Me enfoco en crear soluciones escalables y mantenibles utilizando las mejores prácticas de desarrollo y patrones de diseño.</p>
                     <p class="lead text-center">Experto en Spring Boot, microservicios y bases de datos relacionales. Comprometido con la calidad del código, las pruebas automatizadas y la implementación de prácticas DevOps para garantizar entregas continuas y confiables.</p>
-                    <div class="text-center mt-4">
-                        <a class="btn btn-primary btn-xl" href="cv/tu_cv.pdf" target="_blank">
-                            <i class="fas fa-download me-2"></i>
-                            Descargar CV
-                        </a>
+                    <div class="text-center">
+                        <a class="btn btn-primary btn-xl" href="#footer">Contactar</a>
                     </div>
                 </div>
             </div>
@@ -160,95 +155,37 @@
         </div>
     </section>
 
-    <section class="page-section" id="projects">
-        <div class="container">
-            <h2 class="page-section-heading text-center text-uppercase mb-0">Proyectos</h2>
-            <div class="divider-custom">
-                <div class="divider-custom-icon"><i class="fas fa-laptop-code"></i></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60" alt="Sistema de Microservicios" />
-                    </div>
-                    <div class="portfolio-item-title text-center text-secondary mt-3">Sistema de Microservicios</div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60" alt="API Gateway" />
-                    </div>
-                    <div class="portfolio-item-title text-center text-secondary mt-3">API Gateway</div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60" alt="Sistema de Autenticación" />
-                    </div>
-                    <div class="portfolio-item-title text-center text-secondary mt-3">Sistema de Autenticación</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="page-section" id="contact">
-        <div class="container">
-            <h2 class="page-section-heading text-center text-uppercase mb-0">Contacto</h2>
-            <div class="divider-custom">
-                <div class="divider-custom-icon"><i class="fas fa-envelope"></i></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center mb-5">
-                        <p class="lead">¿Interesado en trabajar juntos? Envíame un mensaje:</p>
-                    </div>
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <input class="form-control" type="text" placeholder="Nombre *" required />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <input class="form-control" type="email" placeholder="Email *" required />
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <input class="form-control" type="text" placeholder="Asunto *" required />
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <textarea class="form-control" placeholder="Mensaje *" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary btn-xl" type="submit">Enviar Mensaje</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer text-center">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <p class="lead mb-0">© 2024 Julio Contreras. Todos los derechos reservados.</p>
-                    <div class="visit-counter mt-3">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Contacto</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> julio.unlp2010@gmail.com</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/julio-c%C3%A9sar-contreras-65604872/" target="_blank">LinkedIn</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/JulioCesar1988" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Ubicación</h5>
+                    <div class="location-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895464!2d-58.38375908477025!3d-34.60373888045943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1647881234567!5m2!1ses-419!2sar" 
+                            width="100%" 
+                            height="150" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        <p class="mt-2"><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-heading">Estadísticas</h5>
+                    <div class="visit-counter">
                         <i class="fas fa-eye"></i> <span id="visitCount">0</span>/100 visitas
                     </div>
+                    <p class="copyright mt-3">© 2024 Julio Contreras<br>Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
