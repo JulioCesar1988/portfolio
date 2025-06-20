@@ -14,7 +14,7 @@
 body {
     font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--text-dark);
-    background-color: var(--bg-white);
+    background-color: transparent !important;
     line-height: 1.6;
 }
 
@@ -48,7 +48,7 @@ body {
 /* Header (Home Section) */
 .masthead {
     padding: 8rem 0 4rem;
-    background: var(--bg-white);
+    background: transparent !important;
     position: relative;
 }
 
@@ -81,7 +81,7 @@ body {
     padding: 6rem 0;
     position: relative;
     z-index: 1;
-    background-color: var(--bg-light);
+    background-color: transparent !important;
 }
 
 .page-section .page-section-heading {
@@ -94,7 +94,7 @@ body {
 
 /* About Section */
 #about {
-    background-color: var(--bg-light);
+    background-color: transparent !important;
 }
 
 #about .lead {
@@ -106,7 +106,7 @@ body {
 
 /* Skills Section */
 #skills {
-    background-color: var(--bg-light);
+    background-color: transparent !important;
 }
 
 #skills .card {
@@ -193,7 +193,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--bg-white);
+    background-color: transparent !important;
     padding: 4rem 0 2rem;
     color: var(--text-light);
     border-top: 1px solid #333;
@@ -377,4 +377,44 @@ body {
 /* Asegurar que el contenido principal tenga una transición suave */
 .container {
     transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-control {
+    background-color: var(--bg-light);
+    border: 1px solid #333;
+    color: var(--text-light);
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .form-control:focus {
+    background-color: var(--bg-light);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    padding: 0.8rem 2rem;
+    font-weight: 500;
 }
