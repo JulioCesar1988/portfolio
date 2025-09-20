@@ -1,14 +1,21 @@
-/* Variables de colores */
+/* Java Developer Theme Variables */
 :root {
-    --primary-color: #ffffff; /* Blanco para elementos clave */
-    --primary-dark: #dddddd; /* Gris claro para hover o estados secundarios */
-    --secondary-color: #1a1a1a; /* Negro muy oscuro para fondos */
-    --accent-color: #888888; /* Gris medio para acentos */
-    --text-dark: #ffffff; /* Texto principal blanco */
-    --text-light: #cccccc; /* Texto secundario gris claro */
-    --bg-light: #1a1a1a; /* Fondo oscuro para secciones */
-    --bg-white: #000000; /* Fondo principal negro */
-    --bg-gradient: linear-gradient(135deg, #000000 0%, #333333 100%); /* Gradiente oscuro si se usa */
+    --java-orange: #f89820; /* Java orange */
+    --java-blue: #007396; /* Java blue */
+    --java-dark-blue: #1e3a8a; /* Darker blue for accents */
+    --primary-color: #f89820; /* Java orange as primary */
+    --primary-dark: #e8890e; /* Darker orange for hover */
+    --secondary-color: #0f172a; /* Very dark blue background */
+    --accent-color: #3b82f6; /* Modern blue accent */
+    --text-dark: #ffffff; /* White text */
+    --text-light: #94a3b8; /* Light gray text */
+    --text-muted: #64748b; /* Muted text */
+    --bg-light: #1e293b; /* Dark blue-gray for cards */
+    --bg-white: #0f172a; /* Main dark background */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --code-bg: #1e293b; /* Code background */
+    --border-color: #334155; /* Border color */
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -23,28 +30,101 @@ body {
     padding: 1.5rem 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background-color: rgba(20, 20, 20, 0.65) !important;
-    border-bottom: 1px solid #333;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    transition: background 0.3s;
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 #mainNav .navbar-brand {
-    color: #fff;
+    color: var(--java-orange);
     font-weight: 700;
     font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(248, 152, 32, 0.3);
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-    color: #fff;
+    color: var(--text-light);
     font-weight: 400;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #3b82f6;
+    color: var(--java-orange);
+    transform: translateY(-2px);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--java-orange);
+    transition: all 0.3s ease;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Navbar Tool Icons */
+.navbar-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 1rem;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+}
+
+.navbar-tool-icon {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.navbar-tool-icon:hover {
+    color: var(--java-orange);
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px rgba(248, 152, 32, 0.4));
+}
+
+/* Specific icon colors */
+.navbar-tool-icon.fa-java:hover {
+    color: #f89820;
+}
+
+.navbar-tool-icon.fa-leaf:hover {
+    color: #6db33f;
+}
+
+.navbar-tool-icon.fa-cogs:hover {
+    color: #c71a36;
+}
+
+.navbar-tool-icon.fa-code:hover {
+    color: #00d4aa;
+}
+
+.navbar-tool-icon.fa-docker:hover {
+    color: #2496ed;
+}
+
+.navbar-tool-icon.fa-git-alt:hover {
+    color: #f05032;
+}
+
+.navbar-tool-icon.fa-search:hover {
+    color: #005571;
 }
 
 /* Header (Home Section) */
@@ -60,6 +140,11 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--java-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .masthead-subheading {
@@ -67,15 +152,24 @@ body {
     font-weight: 300;
     color: var(--text-light);
     margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
 }
 
 .masthead-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 2rem;
-    border: 2px solid var(--text-dark);
+    border: 3px solid var(--java-orange);
+    box-shadow: 0 0 20px rgba(248, 152, 32, 0.3);
+    transition: all 0.3s ease;
+}
+
+.masthead-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(248, 152, 32, 0.5);
 }
 
 /* Sections General */
@@ -112,18 +206,36 @@ body {
 }
 
 #skills .card {
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
-    background-color: rgba(20, 20, 20, 0.65);
-    border-radius: 0.5rem;
+    background-color: var(--bg-light);
+    border-radius: 0.75rem;
     overflow: hidden;
     height: 100%;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    position: relative;
+}
+
+#skills .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--java-orange), var(--java-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 #skills .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border-color: var(--java-orange);
+}
+
+#skills .card:hover::before {
+    opacity: 1;
 }
 
 #skills .card-body {
@@ -138,43 +250,77 @@ body {
 }
 
 #skills .fa-3x {
-    color: #3b82f6;
+    color: var(--java-orange);
     margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(248, 152, 32, 0.3));
+    transition: all 0.3s ease;
+}
+
+#skills .card:hover .fa-3x {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(248, 152, 32, 0.5));
 }
 
 #skills .list-unstyled li {
     margin-bottom: 0.5rem;
-    color: #e0e0e0;
+    color: var(--text-light);
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+#skills .card:hover .list-unstyled li {
+    color: var(--text-dark);
 }
 
 #skills .list-unstyled li i {
-    color: #3b82f6;
+    color: var(--java-blue);
     font-size: 1rem;
     width: 1.5rem;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+#skills .card:hover .list-unstyled li i {
+    color: var(--java-orange);
+    transform: scale(1.1);
 }
 
 /* Buttons */
 .btn-primary {
-    background-color: transparent; /* Fondo transparente por defecto */
-    color: var(--primary-color); /* Texto blanco */
-    border: 1px solid var(--primary-color); /* Borde blanco */
+    background-color: transparent;
+    color: var(--java-orange);
+    border: 2px solid var(--java-orange);
     padding: 0.8rem 1.5rem;
-    border-radius: 0;
-    font-weight: 400;
+    border-radius: 0.5rem;
+    font-weight: 500;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--java-orange), var(--java-blue));
+    transition: left 0.3s ease;
+    z-index: -1;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color); /* Fondo blanco al pasar el ratón */
-    color: var(--secondary-color); /* Texto oscuro al pasar el ratón */
+    color: var(--text-dark);
     transform: translateY(-2px);
-    /* Eliminada la sombra del hover si la había para un look más limpio */
-    box-shadow: none;
+    box-shadow: 0 8px 25px rgba(248, 152, 32, 0.3);
+}
+
+.btn-primary:hover::before {
+    left: 0;
 }
 
 .btn-outline-primary {
@@ -196,10 +342,11 @@ body {
 
 /* Footer */
 .footer {
-    background-color: transparent !important;
+    background-color: rgba(15, 23, 42, 0.95) !important;
     padding: 4rem 0 2rem;
     color: var(--text-light);
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
 }
 
 .footer-heading {
@@ -292,6 +439,19 @@ body {
 
     .footer-contact li {
         justify-content: center;
+    }
+
+    /* Mobile navbar tool icons */
+    .navbar-tools {
+        margin-right: 0;
+        margin-top: 0.5rem;
+        justify-content: center;
+        gap: 1rem;
+        order: 3; /* Move to bottom on mobile */
+    }
+
+    .navbar-tool-icon {
+        font-size: 1.5rem;
     }
 }
 
@@ -420,4 +580,126 @@ body {
 .contact-form .btn-primary {
     padding: 0.8rem 2rem;
     font-weight: 500;
+}
+
+/* Java Developer Specific Styles */
+.java-code-block {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    overflow-x: auto;
+    position: relative;
+}
+
+.java-code-block::before {
+    content: 'Java';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: var(--java-orange);
+    color: var(--text-dark);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.java-keyword {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+.java-string {
+    color: #ce9178;
+}
+
+.java-comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.java-annotation {
+    color: #c586c0;
+}
+
+/* Java-themed animations */
+@keyframes javaGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(248, 152, 32, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(248, 152, 32, 0.6);
+    }
+}
+
+.java-glow {
+    animation: javaGlow 2s ease-in-out infinite;
+}
+
+/* Technology badges */
+.tech-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--java-orange), var(--java-blue));
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(248, 152, 32, 0.3);
+}
+
+/* Divider customization */
+.divider-custom {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.divider-custom-icon {
+    font-size: 2rem;
+    color: var(--java-orange);
+    filter: drop-shadow(0 0 10px rgba(248, 152, 32, 0.3));
+}
+
+/* Social icons enhancement */
+.btn-social {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--java-orange);
+    color: var(--java-orange);
+}
+
+.btn-social:hover {
+    background-color: var(--java-orange);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(248, 152, 32, 0.3);
+}
+
+/* Scroll to top button enhancement */
+.scroll-to-top {
+    background: linear-gradient(135deg, var(--java-orange), var(--java-blue));
+    border: none;
+    box-shadow: 0 4px 15px rgba(248, 152, 32, 0.3);
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(135deg, var(--java-blue), var(--java-orange));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(248, 152, 32, 0.5);
 }

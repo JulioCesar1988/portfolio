@@ -145,4 +145,95 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         typeWriter();
     }
+
+    // Java-themed animations
+    const javaCards = document.querySelectorAll('.java-glow');
+    javaCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'running';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'paused';
+        });
+    });
+
+    // Animate tech badges on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe tech badges
+    document.querySelectorAll('.tech-badge').forEach(badge => {
+        badge.style.opacity = '0';
+        badge.style.transform = 'translateY(20px)';
+        badge.style.transition = 'all 0.6s ease';
+        observer.observe(badge);
+    });
+
+    // Code block syntax highlighting effect
+    const codeBlocks = document.querySelectorAll('.java-code-block');
+    codeBlocks.forEach(block => {
+        block.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.boxShadow = '0 8px 30px rgba(248, 152, 32, 0.2)';
+        });
+        block.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    });
+
+    // Navbar tool icons animation
+    const toolIcons = document.querySelectorAll('.navbar-tool-icon');
+    toolIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 0.6s ease-in-out';
+        });
+        icon.addEventListener('animationend', function() {
+            this.style.animation = '';
+        });
+    });
+
+    // Add click functionality to tool icons (optional)
+    toolIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const toolName = this.getAttribute('title');
+            // You can add specific functionality for each tool
+            console.log(`Clicked on ${toolName} tool icon`);
+            
+            // Example: Scroll to skills section when clicking Java icon
+            if (toolName === 'Java') {
+                document.querySelector('#skills').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            // Scroll to projects section when clicking Git icon
+            if (toolName === 'Git') {
+                document.querySelector('#projects').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            // Scroll to skills section when clicking Kibana icon (Observability section)
+            if (toolName === 'Kibana') {
+                document.querySelector('#skills').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
