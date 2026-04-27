@@ -134,20 +134,31 @@ body {
     justify-content: center;
     padding: 7rem 0 5rem;
     position: relative;
-    background:
-        radial-gradient(ellipse 70% 50% at 50% -5%, rgba(232, 130, 10, 0.10) 0%, transparent 65%),
-        var(--bg-base);
+    background: #0a1428;
     overflow: hidden;
 }
 
-/* Subtle dot grid */
-.masthead::before {
-    content: '';
+/* Hero video background */
+.hero-video {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
-    background-size: 28px 28px;
-    opacity: 0.55;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 20, 40, 0.72) 0%,
+        rgba(5, 15, 30, 0.62) 100%
+    );
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -157,7 +168,7 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Status badge */
@@ -223,14 +234,15 @@ body {
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    color: #ffffff;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
 }
 
 /* Role line */
 .hero-role {
     font-family: var(--font-mono);
     font-size: 0.88rem;
-    color: var(--text-muted);
+    color: rgba(255,255,255,0.65);
     margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
@@ -240,18 +252,18 @@ body {
 }
 
 .role-tech {
-    color: var(--orange);
+    color: #fbbf24;
     font-weight: 600;
 }
 
 .role-sep {
-    color: var(--border);
+    color: rgba(255,255,255,0.25);
 }
 
 /* Tagline */
 .hero-tagline {
     font-size: 1.05rem;
-    color: var(--text-secondary);
+    color: rgba(255,255,255,0.75);
     line-height: 1.75;
     max-width: 520px;
     margin-bottom: 2.5rem;
@@ -292,26 +304,41 @@ body {
 }
 
 .btn-hero-secondary {
-    background: #fff;
-    color: var(--text-primary);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
     font-weight: 500;
     font-size: 0.9rem;
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-md);
-    border: 2px solid var(--border);
+    border: 2px solid rgba(255,255,255,0.35);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(4px);
 }
 
 .btn-hero-secondary:hover {
     border-color: var(--orange);
     color: var(--orange);
+    background: rgba(232,130,10,0.12);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-orange);
+}
+
+/* Override btn-hero-secondary when used outside hero (About section) */
+.page-section .btn-hero-secondary {
+    background: #fff;
+    color: var(--text-primary);
+    border-color: var(--border);
+    backdrop-filter: none;
+}
+
+.page-section .btn-hero-secondary:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: #fff;
 }
 
 /* Social icons (hero) */
@@ -324,21 +351,22 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    border: 1.5px solid var(--border);
-    color: var(--text-secondary);
-    background: #fff;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
     transition: var(--transition);
     text-decoration: none;
-    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(4px);
 }
 
 .hero-social a:hover {
     border-color: var(--orange);
     color: var(--orange);
+    background: rgba(232,130,10,0.15);
     transform: translateY(-3px);
     box-shadow: var(--shadow-orange);
 }
@@ -353,8 +381,9 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
-    color: var(--text-muted);
+    color: rgba(255,255,255,0.5);
     font-size: 0.72rem;
+    z-index: 2;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     text-decoration: none;
@@ -575,6 +604,44 @@ body {
 
 .skill-card:hover::before {
     opacity: 1;
+}
+
+/* AI Tools card */
+.skill-card--ai {
+    border-color: rgba(99, 102, 241, 0.25);
+    background: linear-gradient(135deg, #fff 60%, rgba(99, 102, 241, 0.05));
+}
+
+.skill-card--ai::before {
+    background: linear-gradient(180deg, #6366f1, #a5b4fc);
+    opacity: 1;
+}
+
+.skill-card--ai .skill-card-icon {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.skill-card--ai:hover .skill-card-icon {
+    background: #6366f1;
+    color: #fff;
+}
+
+.skill-card--ai:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
+}
+
+.tech-badge--ai {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.tech-badge--ai:hover {
+    background: #6366f1;
+    color: #fff;
+    border-color: #6366f1;
 }
 
 /* Featured card */
